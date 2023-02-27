@@ -1,4 +1,5 @@
-\documentclass{exam}
+\documentclass{article}
+\usepackage[a4paper,left=2.5cm,right=2.5cm,top=\dimexpr15mm+1.5\baselineskip,bottom=2cm]{geometry}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{setspace}
@@ -10,6 +11,7 @@
 \usepackage{pdfpages}
 \usepackage{relsize}
 \usepackage{cases}
+\usepackage{fancyhdr}
 \usepackage{mathrsfs}
 \usepackage{dutchcal}
 \usepackage{float}
@@ -42,15 +44,29 @@
 \newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand\aug{\fboxsep=-\fboxrule\!\!\!\fbox{\strut}\!\!\!}
 \newcommand{\equations}[1]{\begin{equation*}\begin{cases}\begin{aligned}#1\end{aligned}\end{cases}\end{equation*}}
+
+% Change here
+\newcommand{\course}{XXXXX}
+\newcommand{\asnum}{1}
+%
+
 \titleformat{\subsection}{\normalsize\bfseries}{Exercise \,\thesubsection}{1em}{}
-\setcounter{section}{Y}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhfoffset[L]{1cm} % left extra length
+\fancyhfoffset[R]{1cm} % right extra length
+\rhead{\course}
+\lhead{MD5: \pdfmdfivesum{}}
+\cfoot{\thepage}
+
+\setcounter{section}{\asnum}
 \hypersetup{
     colorlinks, linkcolor=black, urlcolor=cyan
 }
-\title{\vspace{-3em}XXX Assignment Y\footnote{Revision date: \today}}
-\author{STUDENT_NAME1, STUDENT_NAME2, STUDENT_NAME3\vspace{-2em}}
-\pagestyle{plain}
-\date{STUDENTID1, STUDENTID2, STUDENTID3{-3em}}
+\title{\vspace{-3em}\course\, Assignment \asnum}
+\author{XXX\footnote{Group Number: XX}\vspace{1em}\\ XXX}
+\date{\today\vspace{-1em}}
 \begin{document}
 \maketitle
 \renewcommand{\arraystretch}{0.6}
